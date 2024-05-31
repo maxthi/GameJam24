@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MOVE_SPEED = 100;
+var MOVE_SPEED = 100;
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -34,3 +34,7 @@ func _physics_process(delta):
 	# update animation
 	if moveDirection.length() == 0:
 		_animated_sprite.play("idle_front")
+
+
+func _on_plant_1_entered_signal():
+	MOVE_SPEED *= 2
