@@ -1,24 +1,36 @@
 extends CharacterBody2D
 
-const move_speed = 100;
+const MOVE_SPEED = 100;
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _ready():
+	_animated_sprite.speed_scale = 2
 
 func _physics_process(delta):
-
-
 	
-	
+	var moveDirection = Vector2(0,0)
 	if Input.is_action_pressed("move_left"):
-		velocity.x = -move_speed
+		moveDirection.x = -1
+		_animated_sprite.play("walk_left")
 	elif Input.is_action_pressed("move_right"):
-		velocity.x = move_speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed)
+		moveDirection.x = 1
+		_animated_sprite.play("walk_right")
 	
 	if Input.is_action_pressed("move_up"):
-		velocity.y = -move_speed
+		moveDirection.y = -1
+		_animated_sprite.play("walk_up")
 	elif Input.is_action_pressed("move_down"):
-		velocity.y = move_speed
-	else:
-		velocity.y = move_toward(velocity.y, 0, move_speed)
+		moveDirection.y = 1
+		_animated_sprite.play("walk_down")
 
+	# calculate player velocity
+	var vel = Vector2( moveDirection.x * MOVE_SPEED, moveDirection.y * MOVE_SPEED)
+	
+	# update node member
+	velocity = vel;
 	move_and_slide()
+	
+	# update animation
+	if moveDirection.length() == 0:
+		_animated_sprite.play("idle_front")
