@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cag7yeq6t7xin"
-path="res://.godot/imported/sw_tilemap.png-d360e0ad1a23e91b93e7d422d9b62f88.ctex"
+uid="uid://bx3pwa05ii137"
+path="res://.godot/imported/Inner.png-1253928f2fc13d62aec7f0fe7c16aecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/sw_tilemap.png"
-dest_files=["res://.godot/imported/sw_tilemap.png-d360e0ad1a23e91b93e7d422d9b62f88.ctex"]
+source_file="res://graphics/ZeldaLike/Inner.png"
+dest_files=["res://.godot/imported/Inner.png-1253928f2fc13d62aec7f0fe7c16aecd.ctex"]
 
 [params]
 

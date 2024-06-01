@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf5j7uvjn5q1y"
-path="res://.godot/imported/plants.png-e2499b3cbce2222d0cd35b5c8180f749.ctex"
+uid="uid://gym4jkh68yxb"
+path="res://.godot/imported/objects.png-e8f6cd1460851b90e45edfbd801f8257.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/plants.png"
-dest_files=["res://.godot/imported/plants.png-e2499b3cbce2222d0cd35b5c8180f749.ctex"]
+source_file="res://graphics/ZeldaLike/objects.png"
+dest_files=["res://.godot/imported/objects.png-e8f6cd1460851b90e45edfbd801f8257.ctex"]
 
 [params]
 
