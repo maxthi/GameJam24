@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duojwj3817hjq"
-path="res://.godot/imported/spawnpoint.png-2938cff72490bf73bd65b80003d990f4.ctex"
+uid="uid://dhsdmloe4amtf"
+path="res://.godot/imported/Overworld.png-1c841a1673bbe2d0a53d5fc4f182be6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://objects/spawn_point/spawnpoint.png"
-dest_files=["res://.godot/imported/spawnpoint.png-2938cff72490bf73bd65b80003d990f4.ctex"]
+source_file="res://graphics/raw/ZeldaLike/Overworld.png"
+dest_files=["res://.godot/imported/Overworld.png-1c841a1673bbe2d0a53d5fc4f182be6d.ctex"]
 
 [params]
 

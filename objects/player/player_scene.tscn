@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b75clotex6hkb" path="res://objects/player/BODY_male.png" id="2_7nqod"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
-size = Vector2(16, 16)
+size = Vector2(10, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnvgc"]
 atlas = ExtResource("2_7nqod")
@@ -301,7 +301,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_mep4n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -309,7 +309,9 @@ position = Vector2(0.5, 6.5)
 shape = SubResource("RectangleShape2D_bxhwi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -12)
 sprite_frames = SubResource("SpriteFrames_cw4ir")
 animation = &"walk_right"
 frame_progress = 0.635957
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(5, 5)

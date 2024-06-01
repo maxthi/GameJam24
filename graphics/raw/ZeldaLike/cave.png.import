@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5k1mjje6rklq"
-path="res://.godot/imported/character.png-eb69e6a1bab7d8b77cc4c8a6b6c91b99.ctex"
+uid="uid://d1bgswyye44m4"
+path="res://.godot/imported/cave.png-c9142114f5adcda7e47f2a68fadaffb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ZeldaLike/character.png"
-dest_files=["res://.godot/imported/character.png-eb69e6a1bab7d8b77cc4c8a6b6c91b99.ctex"]
+source_file="res://graphics/raw/ZeldaLike/cave.png"
+dest_files=["res://.godot/imported/cave.png-c9142114f5adcda7e47f2a68fadaffb0.ctex"]
 
 [params]
 
