@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://objects/player/player_script.gd" id="1_mep4n"]
 [ext_resource type="Texture2D" uid="uid://b75clotex6hkb" path="res://objects/player/BODY_male.png" id="2_7nqod"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
-size = Vector2(19, 47)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bnvgc"]
 atlas = ExtResource("2_7nqod")
 region = Rect2(0, 0, 64, 64)
@@ -301,12 +298,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
+size = Vector2(19, 47)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_mep4n")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 6.5)
-shape = SubResource("RectangleShape2D_bxhwi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cw4ir")
@@ -315,3 +311,7 @@ frame_progress = 0.635957
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 6.5)
+shape = SubResource("RectangleShape2D_bxhwi")

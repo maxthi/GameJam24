@@ -1110,7 +1110,3 @@ EffectName = "Carrot"
 [node name="plant3" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(-8, 67)
 SpriteTexture = ExtResource("4_enlcr")
-
-[connection signal="entered_signal" from="plant1" to="Player" method="_on_plant_1_entered_signal"]
-[connection signal="entered_signal" from="plant2" to="Player" method="_on_plant_2_entered_signal"]
-[connection signal="entered_signal" from="plant3" to="Player" method="_on_plant_3_entered_signal"]
