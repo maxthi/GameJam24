@@ -45,7 +45,7 @@ func _physics_process(delta):
 	# Update walking sprite
 	var spriteName = ""
 	if moveDirection.length_squared() > 0:
-		if abs(moveDirection.y) >= abs(moveDirection.x):
+		if abs(moveDirection.y) > abs(moveDirection.x):
 			if moveDirection.y > 0:
 				spriteName = "walk_down"
 			elif moveDirection.y <= 0:
@@ -56,7 +56,7 @@ func _physics_process(delta):
 			elif moveDirection.x <= 0:
 				spriteName = "walk_left"
 	elif _lastMoveVec.length_squared() > 0:
-		if abs(_lastMoveVec.y) >= abs(_lastMoveVec.x):
+		if abs(_lastMoveVec.y) > abs(_lastMoveVec.x):
 			if _lastMoveVec.y > 0:
 				spriteName = "idle_front"
 			elif _lastMoveVec.y <= 0:
