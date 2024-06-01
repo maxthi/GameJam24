@@ -1098,15 +1098,16 @@ layer_2/tile_data = PackedInt32Array()
 [node name="plant1" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(100, 5)
 SpriteTexture = ExtResource("3_e43dl")
-EffectName = "Pot"
+EffectName = "color_shift"
 
 [node name="Player" parent="." instance=ExtResource("1_547xy")]
 
 [node name="plant2" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(92, 48)
 SpriteTexture = ExtResource("4_enlcr")
-EffectName = "Carrot"
+EffectName = "invert_view"
 
 [node name="plant3" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(-8, 67)
 SpriteTexture = ExtResource("4_enlcr")
+EffectName = "invert_view"

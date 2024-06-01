@@ -49,5 +49,29 @@ func _physics_process(delta):
 
 
 func _on_collectible_interact( effectName : String ):
+	
+	if effectName == "speed":
+		_effect_speed()
+	elif effectName == "invert_view":
+		_invert_view()
+	elif effectName == "color_shift":
+		_color_shift()
+	
 	print( "Run over effect " + effectName )
-	MOVE_SPEED *= 2
+
+
+func _effect_speed():
+	MOVE_SPEED += 100 * 60;
+
+func _invert_view():
+	#$Camera2D.scale.y *= -1
+	$Camera2D.zoom.y *= -1;
+	#$Camera2D.apply_scale(Vector2(0, -1))
+
+const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
+var _postProcessEffect = null
+
+func _color_shift():
+	_postProcessEffect = PostProcess.instantiate()
+	get_tree().root.add_child(_postProcessEffect)
+

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgrq176rb8hax"]
+
+[ext_resource type="Shader" path="res://graphics/effects/PostProcess.gdshader" id="1_ikc5r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qruwc"]
+shader = ExtResource("1_ikc5r")
+
+[node name="PostProcess" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qruwc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
