@@ -34,29 +34,29 @@ func _physics_process(delta):
 
 	# Update walking sprite
 	var spriteName = ""
-	#if moveDirection.length_squared() > 0:
-		#if abs(moveDirection.y) >= abs(moveDirection.x):
-			#if moveDirection.y > 0:
-				#spriteName = "walk_down"
-			#elif moveDirection.y <= 0:
-				#spriteName = "walk_up"
-		#else:
-			#if moveDirection.x > 0:
-				#spriteName = "walk_right"
-			#elif moveDirection.x <= 0:
-				#spriteName = "walk_left"
-	#else:
-		#spriteName = "idle_front"
 	if moveDirection.length_squared() > 0:
-		if moveDirection.y < 0:
-			spriteName = "walk_up"
+		if abs(moveDirection.y) >= abs(moveDirection.x):
+			if moveDirection.y > 0:
+				spriteName = "walk_down"
+			elif moveDirection.y <= 0:
+				spriteName = "walk_up"
 		else:
-			spriteName = "walk_down"
+			if moveDirection.x > 0:
+				spriteName = "walk_right"
+			elif moveDirection.x <= 0:
+				spriteName = "walk_left"
 	elif _lastMoveVec.length_squared() > 0:
-		if _lastMoveVec.y < 0:
-			spriteName = "idle_back"
+		if abs(_lastMoveVec.y) >= abs(_lastMoveVec.x):
+			if _lastMoveVec.y > 0:
+				spriteName = "idle_front"
+			elif _lastMoveVec.y <= 0:
+				spriteName = "idle_back"
 		else:
-			spriteName = "idle_front"
+			if _lastMoveVec.x > 0:
+				spriteName = "idle_right"
+			elif _lastMoveVec.x <= 0:
+				spriteName = "idle_left"
+
 	if spriteName.length() > 0:
 		_animated_sprite.play(spriteName)
 	if !_animated_sprite.is_playing():
