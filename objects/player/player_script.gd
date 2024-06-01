@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const DEFAULT_MOVE_SPEED = 100 * 60;
 const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
-var _postProcessEffect = null
+var _postProcessEffect : PostProcessing = null
 var _moveSpeed = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
 
@@ -14,9 +14,19 @@ func _ready():
 	var global = get_tree().root.get_child(0) as GlobalScript
 	global.on_collectible_pickup.connect(_on_collectible_interact)
 	global.player = self
+	
+func _ready_hack():
+	_postProcessEffect = PostProcess.instantiate() as PostProcessing
+	get_tree().root.add_child(_postProcessEffect)
+	#_postProcessEffect.enable_effect_MyEffect()
+	
 
-
+var call_once : bool = true
 func _physics_process(delta):
+	
+	if call_once:
+		call_once = false;
+		_ready_hack()
 	
 	# Process player input
 	var moveDirection = Vector2(0,0)
@@ -75,7 +85,8 @@ func _on_collectible_interact( effectName : String ):
 	elif effectName == "invert_view":
 		_invert_view()
 	elif effectName == "color_shift":
-		_color_shift()
+		#_color_shift()
+		pass
 	
 	print( "Run over effect " + effectName )
 
@@ -86,11 +97,6 @@ func _effect_speed():
 
 func _invert_view():
 	$Camera2D.zoom.y *= -1;
-
-
-func _color_shift():
-	_postProcessEffect = PostProcess.instantiate()
-	get_tree().root.add_child(_postProcessEffect)
 
 func resetEffects():
 	# color_shift
