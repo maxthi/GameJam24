@@ -4,8 +4,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qruwc"]
 shader = ExtResource("1_ikc5r")
+shader_parameter/shift_rate = 0.05
 
 [node name="PostProcess" type="CanvasLayer"]
+layer = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qruwc")

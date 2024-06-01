@@ -1,6 +1,9 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform float shift_rate = 0.05;
+
+// HSV conversion from http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl (WTFPL)
 
 // All components are in the range [0…1], including hue.
 vec3 rgb2hsv(vec3 c)
@@ -27,13 +30,8 @@ void fragment() {
 	
 	vec3 hsv = rgb2hsv(inColor);
 	
-	hsv.x = fract(hsv.x + 0.2);
+	hsv.x = fract(hsv.x + TIME * shift_rate);
 
 	// Called for every pixel the material is visible on.
 	COLOR = vec4(hsv2rgb(hsv), 1);
 }
-
-//void light() {
-	// Called for every pixel for every light affecting the CanvasItem.
-	// Uncomment to replace the default light processing function with this one.
-//}
