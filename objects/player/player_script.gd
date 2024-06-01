@@ -7,6 +7,8 @@ var _postProcessEffect : PostProcessing = null
 var _moveSpeed = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
 
+var _rng = RandomNumberGenerator.new()
+
 @onready var _animated_sprite = $AnimatedSprite2D
 
 func _ready():
@@ -18,7 +20,6 @@ func _ready():
 func _ready_hack():
 	_postProcessEffect = PostProcess.instantiate() as PostProcessing
 	get_tree().root.add_child(_postProcessEffect)
-	#_postProcessEffect.enable_effect_MyEffect()
 	
 
 var call_once : bool = true
@@ -66,7 +67,7 @@ func _physics_process(delta):
 				spriteName = "idle_right"
 			elif _lastMoveVec.x <= 0:
 				spriteName = "idle_left"
-
+	
 	if spriteName.length() > 0:
 		_animated_sprite.play(spriteName)
 	if !_animated_sprite.is_playing():
@@ -76,6 +77,15 @@ func _physics_process(delta):
 	_lastMoveVec = velocity
 	velocity = moveDirection * delta * _moveSpeed;
 	move_and_slide()
+	
+	# audio feedback
+	if moveDirection.length_squared() > 0:
+		if not $audio/steps.playing:
+				$audio/steps.play()
+	else:
+		if $audio/steps.playing:
+				$audio/steps.stop()
+
 
 
 func _on_collectible_interact( effectName : String ):
@@ -86,6 +96,8 @@ func _on_collectible_interact( effectName : String ):
 		_invert_view()
 	elif effectName == "color_shift":
 		_postProcessEffect.enable_effect_ColorShift()
+	elif effectName == "evil_colors":
+		_postProcessEffect.enable_effect_EvilColors()
 		pass
 	
 	print( "Run over effect " + effectName )

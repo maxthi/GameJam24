@@ -2,10 +2,10 @@
 
 [ext_resource type="Shader" path="res://graphics/effects/PostProcess.gdshader" id="1_ikc5r"]
 [ext_resource type="Script" path="res://graphics/effects/PostProcess.gd" id="1_ogmcv"]
-[ext_resource type="Shader" path="res://graphics/effects/MyEffect.gdshader" id="2_1xt2o"]
+[ext_resource type="Shader" path="res://graphics/effects/EvilColors.gdshader" id="2_othf7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7030"]
-shader = ExtResource("2_1xt2o")
+shader = ExtResource("2_othf7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qruwc"]
 shader = ExtResource("1_ikc5r")
@@ -15,7 +15,7 @@ shader_parameter/shift_rate = 0.05
 layer = 3
 script = ExtResource("1_ogmcv")
 
-[node name="MyEffect" type="ColorRect" parent="."]
+[node name="EvilColors" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_g7030")
 anchors_preset = 15

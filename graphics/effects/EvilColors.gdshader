@@ -13,8 +13,10 @@ void fragment() {
 	vec3 black = vec3( 0 );
 	vec3 white = vec3( 1 );
 	
-	vec3 color = mix( mix( black, inColor, abs(vec3(3)*sin(TIME)-0.2f) ), white, abs(vec3(3)*sin(TIME) -0.2f) );
-	
+	//vec3 color = mix( mix( black, inColor, abs(vec3(5)*sin(TIME)-0.2f) ), white, abs(vec3(2)*sin(TIME) -0.2f) );
+	float t = 1.;
+	//vec3 color = mix( mix( black, inColor, -1.0), white, 0.5);
+	vec3 color = (vec3(0.3) - inColor) * vec3(10);
 	COLOR = vec4( color, 1);
 }
 

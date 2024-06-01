@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://h4o056hte31j"]
+
+[ext_resource type="Texture2D" uid="uid://d31mndsk7mx5j" path="res://graphics/raw/mushroom/Untitled_Artwork_4.png" id="1_bof8c"]
+[ext_resource type="Script" path="res://objects/mushroom/mushroom.gd" id="1_e5vvi"]
+[ext_resource type="Texture2D" uid="uid://b5sixa0waea1g" path="res://graphics/raw/mushroom/Untitled_Artwork_5.png" id="2_vnq5n"]
+[ext_resource type="Texture2D" uid="uid://b2ke6x0tucbax" path="res://graphics/raw/mushroom/Untitled_Artwork_6.png" id="3_kmo8a"]
+[ext_resource type="Texture2D" uid="uid://d33pskxxj5y2u" path="res://graphics/raw/mushroom/Untitled_Artwork_7.png" id="4_ejtik"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klr42"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("1_bof8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vnq5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kmo8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ejtik")
+}],
+"loop": true,
+"name": &"smile",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq0gv"]
+
+[node name="Mushroom" type="Area2D"]
+script = ExtResource("1_e5vvi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_klr42")
+frame = 1
+frame_progress = 0.0694918
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_lq0gv")
