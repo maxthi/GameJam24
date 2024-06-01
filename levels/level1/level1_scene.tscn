@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2ihjvrbiqmeq"]
+[gd_scene load_steps=5 format=3 uid="uid://c2ihjvrbiqmeq"]
 
 [ext_resource type="Texture2D" uid="uid://dhsdmloe4amtf" path="res://graphics/raw/ZeldaLike/Overworld.png" id="1_rgwnf"]
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="2_715o2"]
-[ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="3_dusx4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lksig"]
 texture = ExtResource("1_rgwnf")

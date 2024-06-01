@@ -85,7 +85,7 @@ func _on_collectible_interact( effectName : String ):
 	elif effectName == "invert_view":
 		_invert_view()
 	elif effectName == "color_shift":
-		#_color_shift()
+		_postProcessEffect.enable_effect_ColorShift()
 		pass
 	
 	print( "Run over effect " + effectName )

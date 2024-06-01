@@ -13,3 +13,6 @@ func _process(delta):
 	
 func enable_effect_MyEffect():
 	$MyEffect.show()
+	
+func enable_effect_ColorShift():
+	$ColorShift.show()

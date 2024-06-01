@@ -1,12 +1,21 @@
 shader_type canvas_item;
 
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
+	vec3 inColor = textureLod(screen_texture, SCREEN_UV, 0).rgb;
 	// Called for every pixel the material is visible on.
-	COLOR = vec4(0,1,0, 1);
+	
+	vec3 black = vec3( 0 );
+	vec3 white = vec3( 1 );
+	
+	vec3 color = mix( mix( black, inColor, abs(vec3(3)*sin(TIME)-0.2f) ), white, abs(vec3(3)*sin(TIME) -0.2f) );
+	
+	COLOR = vec4( color, 1);
 }
 
 //void light() {

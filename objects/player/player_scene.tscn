@@ -4,14 +4,14 @@
 [ext_resource type="SpriteFrames" uid="uid://cht262gcbhoht" path="res://graphics/character/character.tres" id="2_3t8k3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
-size = Vector2(10, 10)
+size = Vector2(19, 47)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_mep4n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_3t8k3")
-animation = &"walk_up"
+animation = &"idle_front"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(5, 5)

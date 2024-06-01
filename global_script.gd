@@ -8,7 +8,6 @@ signal on_collectible_pickup(effectName: String)
 var player: Player = null
 var spawnpoint: SpawnPoint = null
 
-
 func reset_to_start():
 	if player:
 		player.resetEffects()
