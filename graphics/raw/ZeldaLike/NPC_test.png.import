@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wo044pkkotm7"
-path="res://.godot/imported/font.png-d62646286ca3dc411f5cf7707ac6fdfa.ctex"
+uid="uid://rktdsd51jgg1"
+path="res://.godot/imported/NPC_test.png-bd8a0daebfae0df4c38fdb2181696de9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ZeldaLike/font.png"
-dest_files=["res://.godot/imported/font.png-d62646286ca3dc411f5cf7707ac6fdfa.ctex"]
+source_file="res://graphics/raw/ZeldaLike/NPC_test.png"
+dest_files=["res://.godot/imported/NPC_test.png-bd8a0daebfae0df4c38fdb2181696de9.ctex"]
 
 [params]
 

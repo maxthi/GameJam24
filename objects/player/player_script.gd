@@ -36,5 +36,16 @@ func _physics_process(delta):
 		_animated_sprite.play("idle_front")
 
 
-func _on_plant_1_entered_signal():
+func _on_plant_1_entered_signal( effectName : String ):
+	print( "Run over effect " + effectName )
 	MOVE_SPEED *= 2
+
+
+func _on_plant_2_entered_signal(effectName):
+	print( "Run over effect " + effectName )
+	pass # Replace with function body.
+
+
+func _on_plant_3_entered_signal(effectName):
+	
+	pass # Replace with function body.

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhsdmloe4amtf"
-path="res://.godot/imported/Overworld.png-2451c8b617afb0277d239b6bffe392fa.ctex"
+uid="uid://bqsrlru7gaaqs"
+path="res://.godot/imported/log.png-299610e6c788d69a69147218cf1b7732.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ZeldaLike/Overworld.png"
-dest_files=["res://.godot/imported/Overworld.png-2451c8b617afb0277d239b6bffe392fa.ctex"]
+source_file="res://graphics/raw/ZeldaLike/log.png"
+dest_files=["res://.godot/imported/log.png-299610e6c788d69a69147218cf1b7732.ctex"]
 
 [params]
 

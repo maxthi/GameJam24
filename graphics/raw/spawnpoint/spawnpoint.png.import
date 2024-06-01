@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx3pwa05ii137"
-path="res://.godot/imported/Inner.png-1253928f2fc13d62aec7f0fe7c16aecd.ctex"
+uid="uid://duojwj3817hjq"
+path="res://.godot/imported/spawnpoint.png-d5e57049cbdc83711571e6730d40a742.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ZeldaLike/Inner.png"
-dest_files=["res://.godot/imported/Inner.png-1253928f2fc13d62aec7f0fe7c16aecd.ctex"]
+source_file="res://graphics/raw/spawnpoint/spawnpoint.png"
+dest_files=["res://.godot/imported/spawnpoint.png-d5e57049cbdc83711571e6730d40a742.ctex"]
 
 [params]
 
