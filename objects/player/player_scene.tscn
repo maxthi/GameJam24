@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cahstxitftu16"]
+[gd_scene load_steps=12 format=3 uid="uid://cahstxitftu16"]
 
 [ext_resource type="Script" path="res://objects/player/player_script.gd" id="1_mep4n"]
 [ext_resource type="SpriteFrames" uid="uid://cht262gcbhoht" path="res://graphics/character/character.tres" id="2_3t8k3"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://74bfsjxyktcf" path="res://sounds/character/bite-small.wav" id="5_80ssu"]
 [ext_resource type="AudioStream" uid="uid://pju7fht7jwlh" path="res://sounds/character/bite-small2.wav" id="6_ltlrg"]
 [ext_resource type="AudioStream" uid="uid://dueglw0f4i4tx" path="res://sounds/character/bite-small3.wav" id="7_wyckw"]
+[ext_resource type="AudioStream" uid="uid://cmaypppfxqojc" path="res://sounds/character/frog-croaks-22312.wav" id="8_xoudw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
 size = Vector2(14, 14)
@@ -56,6 +57,9 @@ stream = ExtResource("6_ltlrg")
 
 [node name="bite3" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource("7_wyckw")
+
+[node name="frogsound" type="AudioStreamPlayer" parent="audio"]
+stream = ExtResource("8_xoudw")
 
 [node name="SpeechBubble" type="AnimatedSprite2D" parent="."]
 visible = false

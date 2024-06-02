@@ -99,11 +99,15 @@ func _physics_process(delta):
 		hideSpeechBubble()
 
 
-func _on_collectible_interact( effectName : String, strength: float):
-	showSpeechBubble("heart", 2)
-	var array = [$audio/bite, $audio/bite2, $audio/bite3]
-	var rnd = _rng.randi_range(0,array.size()-1)
-	array[rnd].play()
+func _on_collectible_interact( effectName : String, strength: float): 
+
+	if strength < 0:
+		$audio/frogsound.play()
+	else:
+		showSpeechBubble("heart", 2)
+		var array = [$audio/bite, $audio/bite2, $audio/bite3]
+		var rnd = _rng.randi_range(0,array.size()-1)
+		array[rnd].play()
 
 	if strength > 0:
 		if effectName == "speed":
