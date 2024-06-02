@@ -8,20 +8,20 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7030"]
 shader = ExtResource("2_othf7")
-shader_parameter/intensity_mix = 1.0
+shader_parameter/intensity_mix = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qruwc"]
 shader = ExtResource("3_0u040")
 shader_parameter/shift_rate = 0.05
-shader_parameter/intensity_mix = 1.0
+shader_parameter/intensity_mix = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nk3ni"]
 shader = ExtResource("4_l6ide")
-shader_parameter/intensity_mix = 1.0
+shader_parameter/intensity_mix = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6irn"]
 shader = ExtResource("5_jly2q")
-shader_parameter/intensity_mix = 1.0
+shader_parameter/intensity_mix = 0.0
 
 [node name="PostProcess" type="CanvasLayer"]
 layer = 3
