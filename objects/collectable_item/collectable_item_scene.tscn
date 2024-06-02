@@ -21,4 +21,5 @@ sprite_frames = ExtResource("2_mw7f6")
 animation = &"mushroom2"
 frame_progress = 0.64398
 
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
