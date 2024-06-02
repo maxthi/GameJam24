@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const DEFAULT_MOVE_SPEED = 100 * 60;
-const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
+#const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
 var _postProcessEffect : PostProcessing = null
 var _moveSpeed: float = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
@@ -31,19 +31,10 @@ func _ready():
 	var global = get_tree().root.get_child(0) as GlobalScript
 	global.on_collectible_pickup.connect(_on_collectible_interact)
 	global.player = self
+	_postProcessEffect = get_tree().root.get_node("/root/PostProcess") as PostProcessing
 	
-func _ready_hack():
-	_postProcessEffect = PostProcess.instantiate() as PostProcessing
-	get_tree().root.add_child(_postProcessEffect)
-	
-
-var call_once : bool = true
 func _physics_process(delta):
-	
-	if call_once:
-		call_once = false;
-		_ready_hack()
-	
+
 	# Process player input
 	var moveDirection = Vector2(0,0)
 	if Input.is_action_pressed("move_left"):

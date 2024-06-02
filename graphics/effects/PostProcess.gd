@@ -19,6 +19,16 @@ var _targetEffectMix = [0.0, 0.0, 0.0, 0.0]
 const EFFECT_INCREASE = 0.1
 const EFFECT_DECREASE = 0.5
 
+
+func _applyIntensity(intensity: float, material: ShaderMaterial):
+	material.set_shader_parameter("intensity_mix", intensity)
+
+
+func applyAllIntensities():
+	for i: int in _effectMix.size():
+		_applyIntensity(_effectMix[i], _effectShaders[i])
+
+
 func _processIntensity(delta: float, intensity: float, target: float, material: ShaderMaterial) -> float:
 	if intensity == target:
 		return target
@@ -28,7 +38,7 @@ func _processIntensity(delta: float, intensity: float, target: float, material: 
 		intensity = clampf(intensity - delta * EFFECT_DECREASE, target, 1)
 	else:
 		intensity = clampf(intensity + delta * EFFECT_INCREASE, 0, target)
-	material.set_shader_parameter("intensity_mix", intensity)
+	_applyIntensity(intensity, material)
 	return intensity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

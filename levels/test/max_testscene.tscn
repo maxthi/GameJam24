@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2xbxe824sbgq"]
+[gd_scene load_steps=8 format=3 uid="uid://b2xbxe824sbgq"]
 
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="1_547xy"]
 [ext_resource type="TileSet" uid="uid://dafx5ijachmt6" path="res://graphics/tileset0.tres" id="1_jlfhc"]
 [ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="3_k5qms"]
 [ext_resource type="Texture2D" uid="uid://dekmbj7wlrp0l" path="res://graphics/collectable_items_textures/plant2_atlas_texture.tres" id="4_enlcr"]
+[ext_resource type="PackedScene" uid="uid://48huxk0li5qa" path="res://objects/teleporter/teleporter.tscn" id="6_8kgyl"]
 [ext_resource type="PackedScene" uid="uid://conbqjspl8tfh" path="res://objects/spawn_point/spawn_point.tscn" id="6_mi1t0"]
+[ext_resource type="PackedScene" uid="uid://c2cvhcw45jdm8" path="res://levels/world/world.tscn" id="7_qx13h"]
 
 [node name="MaxTestszene" type="Node2D"]
 
@@ -42,3 +44,7 @@ EffectName = "shift"
 position = Vector2(-53, 49)
 SpriteTexture = ExtResource("4_enlcr")
 EffectName = "vignette"
+
+[node name="Teleporter" parent="." instance=ExtResource("6_8kgyl")]
+position = Vector2(-102, -5)
+scene = ExtResource("7_qx13h")
