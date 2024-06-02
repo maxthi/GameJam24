@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhsdmloe4amtf" path="res://graphics/raw/ZeldaLike/Overworld.png" id="1_npain"]
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="2_rmina"]
 [ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="3_4v75c"]
-[ext_resource type="AudioStream" uid="uid://i8qqpe1s6juc" path="res://music/Caketown 1.mp3" id="4_fgsbc"]
+[ext_resource type="AudioStream" uid="uid://i8qqpe1s6juc" path="res://music/Caketown 1.mp3" id="5_0asdj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31jhf"]
 texture = ExtResource("1_npain")
@@ -1227,56 +1227,47 @@ polygon = PackedVector2Array(-70, -68, -10, -68, -4, -93, -6, -125, -39, -143, -
 
 [node name="plant1" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(-198, -80)
-Strength = 0.34
 
 [node name="plant2" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(-190, 209)
 EffectName = "vignette"
-Strength = 0.34
 
 [node name="plant3" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(195, 72)
-Strength = 0.34
 
 [node name="plant4" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(691, -137)
 EffectName = "shift"
-Strength = 0.34
 
 [node name="plant5" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(375, -333)
 EffectName = "evil_colors"
-Strength = 0.34
 
 [node name="plant6" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(1061, -64)
-Strength = 0.34
 
 [node name="plant7" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(986, 162)
-Strength = 0.34
 
 [node name="plant8" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(635, 370)
 EffectName = "vignette"
-Strength = 0.34
 
 [node name="plant9" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(348, 314)
 EffectName = "shift"
-Strength = 0.34
 
 [node name="plant10" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(-238, 128)
 EffectName = "vignette"
-Strength = 0.34
 
 [node name="plant11" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(-396, -209)
 EffectName = "shift"
-Strength = 0.34
 
 [node name="plant12" parent="." instance=ExtResource("3_4v75c")]
 position = Vector2(607, -82)
 EffectName = "shift"
-Strength = 0.34
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0asdj")
