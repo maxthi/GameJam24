@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cahstxitftu16"]
+[gd_scene load_steps=13 format=3 uid="uid://cahstxitftu16"]
 
 [ext_resource type="Script" path="res://objects/player/player_script.gd" id="1_mep4n"]
 [ext_resource type="SpriteFrames" uid="uid://cht262gcbhoht" path="res://graphics/character/character.tres" id="2_3t8k3"]
@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://74bfsjxyktcf" path="res://sounds/character/bite-small.wav" id="5_80ssu"]
 [ext_resource type="AudioStream" uid="uid://pju7fht7jwlh" path="res://sounds/character/bite-small2.wav" id="6_ltlrg"]
 [ext_resource type="AudioStream" uid="uid://dueglw0f4i4tx" path="res://sounds/character/bite-small3.wav" id="7_wyckw"]
+[ext_resource type="AudioStream" path="res://music/Caketown 1.mp3" id="9_cvbmm"]
+[ext_resource type="AudioStream" path="res://music/alexanderZhelanov.mp3" id="10_t0pb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxhwi"]
 size = Vector2(14, 14)
@@ -46,6 +48,7 @@ pitch_scale = 2.96
 
 [node name="steps" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource("4_ea578")
+volume_db = 3.0
 
 [node name="bite" type="AudioStreamPlayer" parent="audio"]
 stream = ExtResource("5_80ssu")
@@ -62,3 +65,12 @@ texture_filter = 1
 position = Vector2(19, -27)
 sprite_frames = SubResource("SpriteFrames_wv624")
 animation = &"heart"
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="maintheme" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("9_cvbmm")
+autoplay = true
+
+[node name="mysthic" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("10_t0pb5")
