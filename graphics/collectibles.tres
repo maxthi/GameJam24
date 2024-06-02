@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dqsfpqt2r6de6" path="res://graphics/raw/tiles/320_wald.png" id="1_c5asm"]
 [ext_resource type="Texture2D" uid="uid://d31mndsk7mx5j" path="res://graphics/raw/mushroom/Untitled_Artwork_4.png" id="2_gmy2l"]
+[ext_resource type="Texture2D" uid="uid://dafrl2h8ijx1w" path="res://graphics/raw/tiles/frog.png" id="2_ilk5f"]
 [ext_resource type="Texture2D" uid="uid://b5sixa0waea1g" path="res://graphics/raw/mushroom/Untitled_Artwork_5.png" id="3_cgtcp"]
 [ext_resource type="Texture2D" uid="uid://b2ke6x0tucbax" path="res://graphics/raw/mushroom/Untitled_Artwork_6.png" id="4_1u5h6"]
 [ext_resource type="Texture2D" uid="uid://d33pskxxj5y2u" path="res://graphics/raw/mushroom/Untitled_Artwork_7.png" id="5_uacpx"]
@@ -9,10 +10,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_pebil"]
 atlas = ExtResource("1_c5asm")
 region = Rect2(16, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oyh7y"]
-atlas = ExtResource("1_c5asm")
-region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dde0u"]
 atlas = ExtResource("1_c5asm")
@@ -50,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oyh7y")
+"texture": ExtResource("2_ilk5f")
 }],
 "loop": true,
 "name": &"frog",

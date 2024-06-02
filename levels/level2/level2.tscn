@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2xbxe824sbgq"]
+[gd_scene load_steps=7 format=3 uid="uid://b2xbxe824sbgq"]
 
 [ext_resource type="Script" path="res://levels/level2/level2.gd" id="1_j35mo"]
 [ext_resource type="TileSet" uid="uid://dafx5ijachmt6" path="res://graphics/tileset0.tres" id="1_pe3yi"]
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="2_6cmoq"]
 [ext_resource type="PackedScene" uid="uid://conbqjspl8tfh" path="res://objects/spawn_point/spawn_point.tscn" id="3_rw54t"]
 [ext_resource type="AudioStream" uid="uid://dhl6ate1s1hrb" path="res://music/alexanderZhelanov.mp3" id="5_hntur"]
+[ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="5_t5fxf"]
 
 [node name="MaxTestszene" type="Node2D"]
 script = ExtResource("1_j35mo")
@@ -47,10 +48,51 @@ polygon = PackedVector2Array(284, 30, 246, 26, 207, 23, 207, -101, 234, -100, 23
 polygon = PackedVector2Array(21, 113, 22, 145, 35, 148, 36, 161, 131, 161, 132, 146, 146, 147, 150, 83, 177, 83, 179, 46, 150, 48, 148, 65, 100, 65, 100, 111)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="blocking shapes"]
-polygon = PackedVector2Array(-298, 13, -297, 100, -365, 101, -365, 47, -552, 47, -554, 180, -577, 181, -576, 142, -705, 147, -704, -60, -504, -67, -504, -4, -390, -5, -390, 12)
+position = Vector2(2, -2)
+polygon = PackedVector2Array(-298, 13, -297, 100, -365, 101, -365, 47, -552, 47, -554, 180, -577, 181, -576, 142, -705, 147, -704, -33, -624, -35, -622, -66, -504, -67, -504, -4, -390, -5, -390, 12)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="blocking shapes"]
 polygon = PackedVector2Array(-721, -130, -663, -130, -663, -102, -720, -102)
+
+[node name="frog1" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(72, -81)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog2" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-493, 173)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog3" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-154, -423)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog4" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-724, -115)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog5" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(345, 42)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog6" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(286, -41)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog7" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-647, -52)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog8" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(101, 18)
+SpriteTexture = "frog"
+Strength = -0.5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hntur")
