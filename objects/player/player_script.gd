@@ -7,7 +7,22 @@ var _postProcessEffect : PostProcessing = null
 var _moveSpeed: float = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
 
+# plants
+const MAX_PLANTS = 10
+var _plantCount = 0
+
 var _rng = RandomNumberGenerator.new()
+
+# speech bubble timer
+var _speechBubbleTimer = 0
+
+func showSpeechBubble( icon, time ):
+	_speechBubbleTimer = time
+	$SpeechBubble.show()
+	$SpeechBubble.play(icon)
+
+func hideSpeechBubble():
+	$SpeechBubble.hide()
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -85,11 +100,16 @@ func _physics_process(delta):
 	else:
 		if $audio/steps.playing:
 				$audio/steps.stop()
-
+				
+	# speech bubble timer
+	if _speechBubbleTimer > 0:
+		_speechBubbleTimer -= delta
+	else:
+		hideSpeechBubble()
 
 
 func _on_collectible_interact( effectName : String ):
-	
+	showSpeechBubble("heart", 2)
 	if effectName == "speed":
 		_effect_speed()
 	elif effectName == "invert_view":
@@ -103,6 +123,15 @@ func _on_collectible_interact( effectName : String ):
 	elif effectName == "shift":
 		_postProcessEffect.enable_effect_Shift()	
 	print( "Run over effect " + effectName )
+	
+	var array = [$audio/bite, $audio/bite2, $audio/bite3]
+	var rnd = _rng.randi_range(0,array.size()-1)
+	array[rnd].play()
+	
+	_plantCount += 1
+	if _plantCount >= MAX_PLANTS:
+		get_tree().change_scene_to_file("res://levels/test/max_testscene.tscn")
+		
 
 
 func _effect_speed():
