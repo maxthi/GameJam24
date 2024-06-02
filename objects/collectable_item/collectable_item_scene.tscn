@@ -1,17 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqh4kuylvvwe1"]
+[gd_scene load_steps=4 format=3 uid="uid://dqh4kuylvvwe1"]
 
 [ext_resource type="Script" path="res://objects/collectable_item/collectable_item_scene.gd" id="1_swinf"]
+[ext_resource type="SpriteFrames" uid="uid://fo7wqdwu3q6o" path="res://graphics/collectibles.tres" id="2_mw7f6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqb0a"]
 size = Vector2(16, 21)
 
 [node name="plant1" type="Area2D" groups=["collectibles"]]
 script = ExtResource("1_swinf")
+SpriteTexture = "mushroom2"
+EffectName = "color_shift"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_cqb0a")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_mw7f6")
+animation = &"mushroom2"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

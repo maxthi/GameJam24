@@ -4,23 +4,26 @@ class_name CollectibleItem
 extends Area2D
 
 
-@export var SpriteTexture: Texture:
+@export_enum("berries", "frog", "herb0", "honey", "honey_spoiled", "mushroom0", "mushroom1", "mushroom2", "mushroom3", "mushroom4", "rhubarb") var SpriteTexture: String:
 	set(new_texture): # called in editor
 		SpriteTexture = new_texture # update property variable
-		$Sprite2D.texture = new_texture # update tile node texture
+		if is_node_ready():
+			$AnimatedSprite2D.play(new_texture) # update tile node texture
 
 
-@export var EffectName: String
+@export_enum("color_shift", "evil_colors", "vignette", "shift") var EffectName: String
 var _hasBeenPickedUp: bool = false
 
 
 func _ready():
-	$Sprite2D.texture = SpriteTexture
+	var rng = RandomNumberGenerator.new()
+	$AnimatedSprite2D.play(SpriteTexture)
+	$AnimatedSprite2D.set_frame_and_progress(rng.randi(), rng.randf())
 
 
 func reactivateIfWasUsed():
 	_hasBeenPickedUp = false;
-	$Sprite2D.show()
+	$AnimatedSprite2D.show()
 
 
 func _on_body_entered(body: Node2D):
@@ -28,4 +31,4 @@ func _on_body_entered(body: Node2D):
 		var global = get_tree().root.get_child(0) as GlobalScript
 		global.on_collectible_pickup.emit(EffectName)
 		_hasBeenPickedUp = true
-		$Sprite2D.hide()
+		$AnimatedSprite2D.hide()
