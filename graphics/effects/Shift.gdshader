@@ -1,6 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform float intensity_mix = 1.0;
 
 //	Simplex 3D Noise 
 //	by Ian McEwan, Stefan Gustavson (https://github.com/stegu/webgl-noise)
@@ -83,8 +84,8 @@ void fragment() {
 
 	float noise = snoise(vec3(SCREEN_UV.xy * 2.0, TIME * 0.2));
 
-	float shiftX = dFdx(noise) * 10.0 * intensity;
-	float shiftY = dFdy(noise) * 10.0 * intensity;
+	float shiftX = dFdx(noise) * 10.0 * intensity * intensity_mix;
+	float shiftY = dFdy(noise) * 10.0 * intensity * intensity_mix;
 
 	COLOR = vec4(textureLod(screen_texture, SCREEN_UV + vec2(shiftX, shiftY), 0).rgb, 1);
 	// Called for every pixel the material is visible on.

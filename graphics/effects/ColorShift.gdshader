@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 uniform float shift_rate = 0.05;
+uniform float intensity_mix = 1.0;
 
 // HSV conversion from http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl (WTFPL)
 
@@ -33,5 +34,5 @@ void fragment() {
 	hsv.x = fract(hsv.x + TIME * shift_rate);
 
 	// Called for every pixel the material is visible on.
-	COLOR = vec4(hsv2rgb(hsv), 1);
+	COLOR = vec4(mix(inColor, hsv2rgb(hsv), intensity_mix * intensity_mix), 1);
 }
