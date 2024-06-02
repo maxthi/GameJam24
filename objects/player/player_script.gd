@@ -4,7 +4,7 @@ extends CharacterBody2D
 const DEFAULT_MOVE_SPEED = 100 * 60;
 const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
 var _postProcessEffect : PostProcessing = null
-var _moveSpeed = DEFAULT_MOVE_SPEED
+var _moveSpeed: float = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
 
 var _rng = RandomNumberGenerator.new()
@@ -98,8 +98,10 @@ func _on_collectible_interact( effectName : String ):
 		_postProcessEffect.enable_effect_ColorShift()
 	elif effectName == "evil_colors":
 		_postProcessEffect.enable_effect_EvilColors()
-		pass
-	
+	elif effectName == "vignette":
+		_postProcessEffect.enable_effect_Vignette()
+	elif effectName == "shift":
+		_postProcessEffect.enable_effect_Shift()	
 	print( "Run over effect " + effectName )
 
 

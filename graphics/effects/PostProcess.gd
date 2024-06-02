@@ -7,12 +7,21 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func enable_effect_MyEffect():
-	$MyEffect.show()
-	
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+	#pass
+
+func enable_effect_EvilColors():
+	$EvilColorsLayer/Effect.show()
+
+
 func enable_effect_ColorShift():
-	$ColorShift.show()
+	$ColorShiftLayer/Effect.show()
+
+
+func enable_effect_Vignette():
+	$VignetteLayer/Effect.show()
+
+
+func enable_effect_Shift():
+	$ShiftLayer/Effect.show()
