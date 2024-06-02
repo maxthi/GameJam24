@@ -22,13 +22,23 @@ layer_2/tile_data = PackedInt32Array()
 [node name="plant2" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(92, 48)
 SpriteTexture = ExtResource("4_enlcr")
-EffectName = "invert_view"
+EffectName = "color_shift"
 
 [node name="plant3" parent="." instance=ExtResource("3_k5qms")]
 position = Vector2(-8, 67)
 SpriteTexture = ExtResource("4_enlcr")
-EffectName = "invert_view"
+EffectName = "evil_colors"
 
 [node name="Spawn" parent="." instance=ExtResource("6_mi1t0")]
 position = Vector2(47, 74)
 player_scene = ExtResource("1_547xy")
+
+[node name="plant4" parent="." instance=ExtResource("3_k5qms")]
+position = Vector2(-4, 103)
+SpriteTexture = ExtResource("4_enlcr")
+EffectName = "shift"
+
+[node name="plant5" parent="." instance=ExtResource("3_k5qms")]
+position = Vector2(-53, 49)
+SpriteTexture = ExtResource("4_enlcr")
+EffectName = "vignette"
