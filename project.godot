@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Game Jam 24"
+config/name="Kräuterhexe"
 run/main_scene="res://levels/world/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

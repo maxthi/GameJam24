@@ -94,5 +94,20 @@ position = Vector2(101, 18)
 SpriteTexture = "frog"
 Strength = -0.5
 
+[node name="frog9" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-219, 54)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog10" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-248, -206)
+SpriteTexture = "frog"
+Strength = -0.5
+
+[node name="frog11" parent="blocking shapes" instance=ExtResource("5_t5fxf")]
+position = Vector2(-431, -295)
+SpriteTexture = "frog"
+Strength = -0.5
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hntur")
