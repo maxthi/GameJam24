@@ -1,0 +1,133 @@
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://fo7wqdwu3q6o"]
+
+[ext_resource type="Texture2D" uid="uid://dqsfpqt2r6de6" path="res://graphics/raw/tiles/320_wald.png" id="1_c5asm"]
+[ext_resource type="Texture2D" uid="uid://d31mndsk7mx5j" path="res://graphics/raw/mushroom/Untitled_Artwork_4.png" id="2_gmy2l"]
+[ext_resource type="Texture2D" uid="uid://b5sixa0waea1g" path="res://graphics/raw/mushroom/Untitled_Artwork_5.png" id="3_cgtcp"]
+[ext_resource type="Texture2D" uid="uid://b2ke6x0tucbax" path="res://graphics/raw/mushroom/Untitled_Artwork_6.png" id="4_1u5h6"]
+[ext_resource type="Texture2D" uid="uid://d33pskxxj5y2u" path="res://graphics/raw/mushroom/Untitled_Artwork_7.png" id="5_uacpx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pebil"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyh7y"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dde0u"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccaig"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwq4x"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idk5a"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xqst"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20o6y"]
+atlas = ExtResource("1_c5asm")
+region = Rect2(96, 48, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pebil")
+}],
+"loop": true,
+"name": &"berries",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyh7y")
+}],
+"loop": true,
+"name": &"frog",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dde0u")
+}],
+"loop": true,
+"name": &"herb0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccaig")
+}],
+"loop": true,
+"name": &"honey",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwq4x")
+}],
+"loop": true,
+"name": &"honey_spoiled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gmy2l")
+}],
+"loop": true,
+"name": &"mushroom0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cgtcp")
+}],
+"loop": true,
+"name": &"mushroom1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1u5h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uacpx")
+}],
+"loop": true,
+"name": &"mushroom2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idk5a")
+}],
+"loop": true,
+"name": &"mushroom3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xqst")
+}],
+"loop": true,
+"name": &"mushroom4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20o6y")
+}],
+"loop": true,
+"name": &"rhubarb",
+"speed": 5.0
+}]
