@@ -2,10 +2,27 @@ class_name Player
 extends CharacterBody2D
 
 const DEFAULT_MOVE_SPEED = 100 * 60;
-const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
+#const PostProcess = preload("res://graphics/effects/PostProcess.tscn")
 var _postProcessEffect : PostProcessing = null
-var _moveSpeed = DEFAULT_MOVE_SPEED
+var _moveSpeed: float = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
+
+# plants
+const MAX_PLANTS = 10
+var _plantCount = 0
+
+var _rng = RandomNumberGenerator.new()
+
+# speech bubble timer
+var _speechBubbleTimer = 0
+
+func showSpeechBubble( icon, time ):
+	_speechBubbleTimer = time
+	$SpeechBubble.show()
+	$SpeechBubble.play(icon)
+
+func hideSpeechBubble():
+	$SpeechBubble.hide()
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -14,20 +31,10 @@ func _ready():
 	var global = get_tree().root.get_child(0) as GlobalScript
 	global.on_collectible_pickup.connect(_on_collectible_interact)
 	global.player = self
+	_postProcessEffect = get_tree().root.get_node("/root/PostProcess") as PostProcessing
 	
-func _ready_hack():
-	_postProcessEffect = PostProcess.instantiate() as PostProcessing
-	get_tree().root.add_child(_postProcessEffect)
-	#_postProcessEffect.enable_effect_MyEffect()
-	
-
-var call_once : bool = true
 func _physics_process(delta):
-	
-	if call_once:
-		call_once = false;
-		_ready_hack()
-	
+
 	# Process player input
 	var moveDirection = Vector2(0,0)
 	if Input.is_action_pressed("move_left"):
@@ -66,7 +73,7 @@ func _physics_process(delta):
 				spriteName = "idle_right"
 			elif _lastMoveVec.x <= 0:
 				spriteName = "idle_left"
-
+	
 	if spriteName.length() > 0:
 		_animated_sprite.play(spriteName)
 	if !_animated_sprite.is_playing():
@@ -76,19 +83,46 @@ func _physics_process(delta):
 	_lastMoveVec = velocity
 	velocity = moveDirection * delta * _moveSpeed;
 	move_and_slide()
+	
+	# audio feedback
+	if moveDirection.length_squared() > 0:
+		if not $audio/steps.playing:
+				$audio/steps.play()
+	else:
+		if $audio/steps.playing:
+				$audio/steps.stop()
+				
+	# speech bubble timer
+	if _speechBubbleTimer > 0:
+		_speechBubbleTimer -= delta
+	else:
+		hideSpeechBubble()
 
 
 func _on_collectible_interact( effectName : String ):
-	
+	showSpeechBubble("heart", 2)
 	if effectName == "speed":
 		_effect_speed()
 	elif effectName == "invert_view":
 		_invert_view()
 	elif effectName == "color_shift":
-		#_color_shift()
-		pass
-	
+		_postProcessEffect.enable_effect_ColorShift()
+	elif effectName == "evil_colors":
+		_postProcessEffect.enable_effect_EvilColors()
+	elif effectName == "vignette":
+		_postProcessEffect.enable_effect_Vignette()
+	elif effectName == "shift":
+		_postProcessEffect.enable_effect_Shift()	
 	print( "Run over effect " + effectName )
+	
+	var array = [$audio/bite, $audio/bite2, $audio/bite3]
+	var rnd = _rng.randi_range(0,array.size()-1)
+	array[rnd].play()
+	
+	_plantCount += 1
+	if _plantCount >= MAX_PLANTS:
+		get_tree().change_scene_to_file("res://levels/test/max_testscene.tscn")
+		
 
 
 func _effect_speed():

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Game Jam 24"
-run/main_scene="res://levels/test/max_testscene.tscn"
+run/main_scene="res://levels/world/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalScript="*res://global_script.gd"
+PostProcess="*res://graphics/effects/PostProcess.tscn"
 
 [display]
 

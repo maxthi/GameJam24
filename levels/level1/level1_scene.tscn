@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhsdmloe4amtf" path="res://graphics/raw/ZeldaLike/Overworld.png" id="1_rgwnf"]
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="2_715o2"]
-[ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="3_dusx4"]
+[ext_resource type="PackedScene" uid="uid://h4o056hte31j" path="res://objects/mushroom/mushroom.tscn" id="3_t5yom"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lksig"]
 texture = ExtResource("1_rgwnf")
@@ -1103,7 +1103,34 @@ scale = Vector2(5, 5)
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(-256, 186, -224, 186, -224, 202, -192, 202, -192, 186, -176, 186, -176, 170, -160, 170, -160, 154, -128, 154, -128, 138, -96, 138, -96, 122, -36, 122, -36, 100, 36, 100, 36, 122, 48, 122, 48, 138, 96, 138, 96, 154, 128, 154, 128, 138, 192, 138, 192, 122, 400, 122, 400, 106, 416, 106, 416, 90, 432, 90, 432, 58, 416, 58, 416, 26, 400, 26, 400, -6, 384, -6, 384, -54, 368, -54, 368, -86, 352, -86, 352, -150, 272, -150, 272, -134, 256, -134, 256, -118, 224, -118, 224, -86, 208, -86, 208, -70, 240, -70, 240, -54, 256, -54, 256, 42, 192, 42, 192, 26, 176, 26, 176, -6, 160, -6, 160, -22, 144, -22, 144, -38, 128, -38, 128, -70, 112, -70, 112, -86, -144, -86, -260, -39)
+
+[node name="mushrooms" type="Node2D" parent="."]
+
+[node name="Mushroom" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(40, 12)
+
+[node name="Mushroom2" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(-62, 54)
+
+[node name="Mushroom3" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(148, 83)
+
+[node name="Mushroom4" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(-118, -54)
+
+[node name="Mushroom5" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(337, -30)
+
+[node name="Mushroom6" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(66, 1)
+
+[node name="Mushroom7" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(71, 29)
+
+[node name="Mushroom8" parent="mushrooms" instance=ExtResource("3_t5yom")]
+position = Vector2(46, 39)

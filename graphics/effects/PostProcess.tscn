@@ -1,22 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgrq176rb8hax"]
+[gd_scene load_steps=10 format=3 uid="uid://bgrq176rb8hax"]
 
-[ext_resource type="Shader" path="res://graphics/effects/PostProcess.gdshader" id="1_ikc5r"]
 [ext_resource type="Script" path="res://graphics/effects/PostProcess.gd" id="1_ogmcv"]
-[ext_resource type="Shader" path="res://graphics/effects/MyEffect.gdshader" id="2_1xt2o"]
+[ext_resource type="Shader" path="res://graphics/effects/EvilColors.gdshader" id="2_othf7"]
+[ext_resource type="Shader" path="res://graphics/effects/ColorShift.gdshader" id="3_0u040"]
+[ext_resource type="Shader" path="res://graphics/effects/Vignette.gdshader" id="4_l6ide"]
+[ext_resource type="Shader" path="res://graphics/effects/Shift.gdshader" id="5_jly2q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7030"]
-shader = ExtResource("2_1xt2o")
+shader = ExtResource("2_othf7")
+shader_parameter/intensity_mix = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qruwc"]
-shader = ExtResource("1_ikc5r")
+shader = ExtResource("3_0u040")
 shader_parameter/shift_rate = 0.05
+shader_parameter/intensity_mix = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nk3ni"]
+shader = ExtResource("4_l6ide")
+shader_parameter/intensity_mix = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k6irn"]
+shader = ExtResource("5_jly2q")
+shader_parameter/intensity_mix = 0.0
 
 [node name="PostProcess" type="CanvasLayer"]
 layer = 3
 script = ExtResource("1_ogmcv")
 
-[node name="MyEffect" type="ColorRect" parent="."]
-visible = false
+[node name="EvilColorsLayer" type="CanvasLayer" parent="."]
+
+[node name="Effect" type="ColorRect" parent="EvilColorsLayer"]
 material = SubResource("ShaderMaterial_g7030")
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,8 +37,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorShiftLayer" type="CanvasLayer" parent="."]
+
+[node name="Effect" type="ColorRect" parent="ColorShiftLayer"]
 material = SubResource("ShaderMaterial_qruwc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VignetteLayer" type="CanvasLayer" parent="."]
+
+[node name="Effect" type="ColorRect" parent="VignetteLayer"]
+material = SubResource("ShaderMaterial_nk3ni")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShiftLayer" type="CanvasLayer" parent="."]
+
+[node name="Effect" type="ColorRect" parent="ShiftLayer"]
+material = SubResource("ShaderMaterial_k6irn")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
