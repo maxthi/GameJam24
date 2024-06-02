@@ -121,7 +121,7 @@ func _on_collectible_interact( effectName : String ):
 	
 	_plantCount += 1
 	if _plantCount >= MAX_PLANTS:
-		get_tree().change_scene_to_file("res://levels/test/max_testscene.tscn")
+		get_tree().change_scene_to_file("res://levels/level2/level2.tscn")
 		
 
 

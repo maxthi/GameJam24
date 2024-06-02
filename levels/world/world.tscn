@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2cvhcw45jdm8"]
+[gd_scene load_steps=9 format=3 uid="uid://c2cvhcw45jdm8"]
 
 [ext_resource type="Texture2D" uid="uid://dhsdmloe4amtf" path="res://graphics/raw/ZeldaLike/Overworld.png" id="1_npain"]
 [ext_resource type="PackedScene" uid="uid://cahstxitftu16" path="res://objects/player/player_scene.tscn" id="2_rmina"]
+[ext_resource type="PackedScene" uid="uid://dqh4kuylvvwe1" path="res://objects/collectable_item/collectable_item_scene.tscn" id="3_4v75c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31jhf"]
 texture = ExtResource("1_npain")
@@ -1115,7 +1116,7 @@ polygon = PackedVector2Array(822, 147, 822, 114, 928, 114, 928, 96, 896, 96, 896
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
-polygon = PackedVector2Array(208, -112, 336, -112, 336, -96, 528, -96, 528, -112, 640, -112, 640, 0, 688, 0, 688, 16, 736, 16, 736, -112, 784, -112, 784, -128, 832, -128, 832, -144, 880, -144, 880, -128, 960, -128, 960, -144, 992, -144, 992, -256, 990, -256, 990, -228, 960, -228, 960, -212, 881, -212, 881, -227, 832, -227, 832, -212, 784, -212, 784, -196, 733, -196, 733, -83, 690, -83, 690, -99, 643, -99, 643, -195, 527, -195, 527, -181, 337, -181, 337, -195, 211, -194, 211, -237, 208, -237, 208, -210, 145, -210, 145, -243, -114, -243, -114, -181, -285, -181, -285, -208, -288, -208, -288, -144, -225, -144, -225, -112, -112, -112, -112, -176, 144, -176, 144, -144, 208, -144)
+polygon = PackedVector2Array(208, -112, 336, -112, 336, -96, 528, -96, 528, -112, 640, -112, 640, 0, 688, 0, 688, 16, 736, 16, 736, -112, 784, -112, 784, -128, 832, -128, 832, -144, 880, -144, 880, -128, 960, -128, 960, -144, 992, -144, 992, -256, 990, -256, 990, -228, 960, -228, 960, -212, 881, -212, 881, -227, 832, -227, 832, -212, 784, -212, 784, -196, 733, -196, 733, -83, 690, -83, 690, -99, 643, -99, 643, -195, 527, -195, 527, -181, 337, -181, 337, -195, 211, -194, 211, -237, 208, -237, 208, -210, 145, -210, 145, -243, -114, -243, -114, -181, -285, -181, -285, -208, -288, -208, -288, -144, -228, -144, -228, -112, -112, -112, -112, -176, 144, -176, 144, -144, 208, -144)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
@@ -1220,3 +1221,51 @@ polygon = PackedVector2Array(836, 312, 858, 311, 861, 345, 835, 347)
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
 build_mode = 1
 polygon = PackedVector2Array(-70, -68, -10, -68, -4, -93, -6, -125, -39, -143, -74, -128, -76, -95)
+
+[node name="plant1" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(-198, -80)
+EffectName = "color_shift"
+
+[node name="plant2" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(-190, 209)
+EffectName = "vignette"
+
+[node name="plant3" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(195, 72)
+EffectName = "color_shift"
+
+[node name="plant4" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(691, -137)
+EffectName = "shift"
+
+[node name="plant5" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(375, -333)
+EffectName = "evil_colors"
+
+[node name="plant6" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(1061, -64)
+EffectName = "color_shift"
+
+[node name="plant7" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(986, 162)
+EffectName = "color_shift"
+
+[node name="plant8" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(635, 370)
+EffectName = "vignette"
+
+[node name="plant9" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(348, 314)
+EffectName = "shift"
+
+[node name="plant10" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(-238, 128)
+EffectName = "vignette"
+
+[node name="plant11" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(-396, -209)
+EffectName = "shift"
+
+[node name="plant12" parent="." instance=ExtResource("3_4v75c")]
+position = Vector2(607, -82)
+EffectName = "shift"
