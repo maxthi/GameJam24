@@ -99,30 +99,34 @@ func _physics_process(delta):
 		hideSpeechBubble()
 
 
-func _on_collectible_interact( effectName : String ):
+func _on_collectible_interact( effectName : String, strength: float):
 	showSpeechBubble("heart", 2)
-	if effectName == "speed":
-		_effect_speed()
-	elif effectName == "invert_view":
-		_invert_view()
-	elif effectName == "color_shift":
-		_postProcessEffect.enable_effect_ColorShift()
-	elif effectName == "evil_colors":
-		_postProcessEffect.enable_effect_EvilColors()
-	elif effectName == "vignette":
-		_postProcessEffect.enable_effect_Vignette()
-	elif effectName == "shift":
-		_postProcessEffect.enable_effect_Shift()	
-	print( "Run over effect " + effectName )
-	
 	var array = [$audio/bite, $audio/bite2, $audio/bite3]
 	var rnd = _rng.randi_range(0,array.size()-1)
 	array[rnd].play()
+
+	if strength > 0:
+		if effectName == "speed":
+			_effect_speed()
+		elif effectName == "invert_view":
+			_invert_view()
+		elif effectName == "color_shift":
+			_postProcessEffect.enable_effect_ColorShift(strength)
+		elif effectName == "evil_colors":
+			_postProcessEffect.enable_effect_EvilColors()
+		elif effectName == "vignette":
+			_postProcessEffect.enable_effect_Vignette(strength)
+		elif effectName == "shift":
+			_postProcessEffect.enable_effect_Shift(strength)	
+		print( "Run over effect " + effectName )
+		_plantCount += 1
+		if _plantCount >= MAX_PLANTS:
+			get_tree().change_scene_to_file("res://levels/level2/level2.tscn")
 	
-	_plantCount += 1
-	if _plantCount >= MAX_PLANTS:
-		get_tree().change_scene_to_file("res://levels/level2/level2.tscn")
-		
+	else:
+		var allEffectsCleared = _postProcessEffect.reduceRandomIntensity(abs(strength))
+		if allEffectsCleared:
+			get_tree().change_scene_to_file("res://levels/world/world.tscn")
 
 
 func _effect_speed():

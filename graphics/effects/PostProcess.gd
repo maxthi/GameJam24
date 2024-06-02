@@ -29,6 +29,21 @@ func applyAllIntensities():
 		_applyIntensity(_effectMix[i], _effectShaders[i])
 
 
+func reduceRandomIntensity(strength: float) -> bool:
+	var indices = []
+	for i: int in _targetEffectMix.size():
+		if _targetEffectMix[i] > 0:
+			indices.push_back(i)
+
+	if indices.size() > 0:
+		var rng = RandomNumberGenerator.new()
+		var index = indices[rng.randi() % indices.size()]
+		_targetEffectMix[index] = clamp(_targetEffectMix[index] - strength, 0, 1)
+		return indices.size() == 1 && _targetEffectMix[index] == 0
+	else:
+		return true
+	
+
 func _processIntensity(delta: float, intensity: float, target: float, material: ShaderMaterial) -> float:
 	if intensity == target:
 		return target
@@ -50,16 +65,16 @@ func enable_effect_EvilColors():
 	_targetEffectMix[0] = clampf(_targetEffectMix[0] + 1.0, 0, 1)
 
 
-func enable_effect_ColorShift():
-	_targetEffectMix[1] = clampf(_targetEffectMix[1] + 0.4, 0, 1)
+func enable_effect_ColorShift(strength: float):
+	_targetEffectMix[1] = clampf(_targetEffectMix[1] + strength, 0, 1)
 
 
-func enable_effect_Vignette():
-	_targetEffectMix[2] = clampf(_targetEffectMix[2] + 0.4, 0, 1)
+func enable_effect_Vignette(strength: float):
+	_targetEffectMix[2] = clampf(_targetEffectMix[2] + strength, 0, 1)
 
 
-func enable_effect_Shift():
-	_targetEffectMix[3] = clampf(_targetEffectMix[3] + 0.4, 0, 1)
+func enable_effect_Shift(strength: float):
+	_targetEffectMix[3] = clampf(_targetEffectMix[3] + strength, 0, 1)
 
 
 func _soft_reset_effects():

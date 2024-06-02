@@ -2,7 +2,7 @@ extends Node
 
 
 # Emitted whenever a pickup is picked up
-signal on_collectible_pickup(effectName: String)
+signal on_collectible_pickup(effectName: String, effectValue: float)
 
 
 var player: Player = null

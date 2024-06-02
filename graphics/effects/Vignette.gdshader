@@ -9,7 +9,7 @@ void fragment() {
 
 	float pulse = sin(TIME * 2.0) * 0.5 + 0.5;
 	
-	blurIntensity = pow(blurIntensity, mix(0.1, 0.3, pulse));
+	blurIntensity = pow(blurIntensity, mix(1.3, 1.7, pulse));
 
 	vec3 black = vec3(0);
 	

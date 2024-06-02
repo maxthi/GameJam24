@@ -15,6 +15,8 @@ extends Area2D
 var _hasBeenPickedUp: bool = false
 
 
+@export_range(-1, 1) var Strength: float = 0.34
+
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	$AnimatedSprite2D.play(SpriteTexture)
@@ -29,6 +31,6 @@ func reactivateIfWasUsed():
 func _on_body_entered(body: Node2D):
 	if !_hasBeenPickedUp && body.name == "Player": # this requires player node to be called "Player"
 		var global = get_tree().root.get_child(0) as GlobalScript
-		global.on_collectible_pickup.emit(EffectName)
+		global.on_collectible_pickup.emit(EffectName, Strength)
 		_hasBeenPickedUp = true
 		$AnimatedSprite2D.hide()

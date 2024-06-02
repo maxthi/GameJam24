@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgrq176rb8hax"]
+[gd_scene load_steps=12 format=3 uid="uid://bgrq176rb8hax"]
 
 [ext_resource type="Script" path="res://graphics/effects/PostProcess.gd" id="1_ogmcv"]
 [ext_resource type="Shader" path="res://graphics/effects/EvilColors.gdshader" id="2_othf7"]
 [ext_resource type="Shader" path="res://graphics/effects/ColorShift.gdshader" id="3_0u040"]
 [ext_resource type="Shader" path="res://graphics/effects/Vignette.gdshader" id="4_l6ide"]
 [ext_resource type="Shader" path="res://graphics/effects/Shift.gdshader" id="5_jly2q"]
+[ext_resource type="Shader" path="res://graphics/effects/Fade.gdshader" id="6_epw76"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7030"]
 shader = ExtResource("2_othf7")
@@ -22,6 +23,10 @@ shader_parameter/intensity_mix = 0.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k6irn"]
 shader = ExtResource("5_jly2q")
 shader_parameter/intensity_mix = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgnpy"]
+shader = ExtResource("6_epw76")
+shader_parameter/fade_mix = 1.0
 
 [node name="PostProcess" type="CanvasLayer"]
 layer = 3
@@ -66,3 +71,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeoutLayer" type="CanvasLayer" parent="."]
+
+[node name="Effect" type="ColorRect" parent="FadeoutLayer"]
+material = SubResource("ShaderMaterial_jgnpy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
