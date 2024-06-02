@@ -48,7 +48,8 @@ polygon = PackedVector2Array(284, 30, 246, 26, 207, 23, 207, -101, 234, -100, 23
 polygon = PackedVector2Array(21, 113, 22, 145, 35, 148, 36, 161, 131, 161, 132, 146, 146, 147, 150, 83, 177, 83, 179, 46, 150, 48, 148, 65, 100, 65, 100, 111)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="blocking shapes"]
-polygon = PackedVector2Array(-298, 13, -297, 100, -365, 101, -365, 47, -552, 47, -554, 180, -577, 181, -576, 142, -705, 147, -704, -60, -504, -67, -504, -4, -390, -5, -390, 12)
+position = Vector2(2, -2)
+polygon = PackedVector2Array(-298, 13, -297, 100, -365, 101, -365, 47, -552, 47, -554, 180, -577, 181, -576, 142, -705, 147, -704, -33, -624, -35, -622, -66, -504, -67, -504, -4, -390, -5, -390, 12)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="blocking shapes"]
 polygon = PackedVector2Array(-721, -130, -663, -130, -663, -102, -720, -102)
