@@ -38,8 +38,7 @@ script = ExtResource("1_e5vvi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_klr42")
-animation = &"smile"
-frame_progress = 0.206665
+frame_progress = 0.247204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 5)

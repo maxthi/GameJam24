@@ -18,6 +18,6 @@ shape = SubResource("RectangleShape2D_cqb0a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_mw7f6")
 animation = &"mushroom2"
-frame_progress = 0.394954
+frame_progress = 0.488994
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
