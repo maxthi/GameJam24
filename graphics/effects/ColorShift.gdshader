@@ -34,5 +34,5 @@ void fragment() {
 	hsv.x = fract(hsv.x + TIME * shift_rate);
 
 	// Called for every pixel the material is visible on.
-	COLOR = vec4(mix(inColor, hsv2rgb(hsv), intensity_mix * intensity_mix), 1);
+	COLOR = vec4(mix(inColor, hsv2rgb(hsv), intensity_mix), 1);
 }

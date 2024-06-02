@@ -8,7 +8,7 @@ var _moveSpeed: float = DEFAULT_MOVE_SPEED
 var _lastMoveVec: Vector2
 
 # plants
-const MAX_PLANTS = 10
+const MAX_PLANTS = 9
 var _plantCount = 0
 
 var _rng = RandomNumberGenerator.new()

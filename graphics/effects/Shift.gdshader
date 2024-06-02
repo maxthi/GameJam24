@@ -84,8 +84,8 @@ void fragment() {
 
 	float noise = snoise(vec3(SCREEN_UV.xy * 2.0, TIME * 0.2));
 
-	float shiftX = dFdx(noise) * 2.0 * intensity * intensity_mix;
-	float shiftY = dFdy(noise) * 2.0 * intensity * intensity_mix;
+	float shiftX = dFdx(noise) * 3.0 * intensity * intensity_mix;
+	float shiftY = dFdy(noise) * 3.0 * intensity * intensity_mix;
 
 	COLOR = vec4(textureLod(screen_texture, SCREEN_UV + vec2(shiftX, shiftY), 0).rgb, 1);
 	// Called for every pixel the material is visible on.
